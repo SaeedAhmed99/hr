@@ -1,0 +1,70 @@
+<?php
+
+use App\Models\Holiday;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoanController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AwardController;
+use App\Http\Controllers\GraphController;
+use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ImportController;
+use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\TravelController;
+use App\Http\Controllers\HolidayController;
+use App\Http\Controllers\MeetingController;
+use App\Http\Controllers\TrainerController;
+use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\LoanTypeController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\TransferController;
+use App\Http\Controllers\AwardTypeController;
+use App\Http\Controllers\LeaveTypeController;
+use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\SetSalaryController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\IpRestrictController;
+use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\JobCategoryController;
+use App\Http\Controllers\ResignationController;
+use App\Http\Controllers\TerminationController;
+use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\SetAllowanceController;
+use App\Http\Controllers\SetComissionController;
+use App\Http\Controllers\SetDeductionController;
+use App\Http\Controllers\TrainingTypeController;
+use App\Http\Controllers\MonthlySalaryController;
+use App\Http\Controllers\SetCommissionController;
+use App\Http\Controllers\AllowanceOptionController;
+use App\Http\Controllers\TerminationTypeController;
+use App\Http\Controllers\ManualAttendanceController;
+use App\Http\Controllers\PayrollDatatableController;
+use App\Http\Controllers\PerformanceMetricController;
+use App\Http\Controllers\AttendanceEmployeeController;
+use App\Http\Controllers\SetSalaryDatatableController;
+use App\Http\Controllers\EmployeePerformanceController;
+use App\Http\Controllers\InstallController;
+use App\Http\Controllers\PerformanceCriterionController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return redirect(route('install.requirment'));
+});
+Route::get('install/requirments', [InstallController::class, 'requirements'])->name('install.requirment');
+Route::get('install/verify-code', [InstallController::class, 'verifyCode'])->name('install.verify.code');
+Route::get('install/server-config', [InstallController::class, 'showServerConfig'])->name('install.server.config.show');
+Route::post('install/server-config', [InstallController::class, 'createServerConfig'])->name('install.server.config.create');
+Route::get('install/migrate', [InstallController::class, 'dbMigration'])->name('install.server.migrate');

@@ -1,0 +1,1 @@
+<a href="{{ url('/') }}" type="button" class="btn buy-now-btn rounded-pill"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
